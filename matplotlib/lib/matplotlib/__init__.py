@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64'
-__revision__ = '$Revision: 1.15 $'
-__date__     = '$Date: 2004-11-10 08:12:19 $'
+__revision__ = '$Revision: 1.16 $'
+__date__     = '$Date: 2004-11-11 21:39:19 $'
 
 import sys, os
 import distutils.sysconfig
@@ -512,7 +512,7 @@ defaultParams = {
 
     'image.aspect' : ['free', str],  # free| preserve
     'image.interpolation'  : ['bilinear', str], 
-    'image.cmap'   : ['gray', str],        # one of gray, jet
+    'image.cmap'   : ['gray', str],        # one of gray, jet, etc
     'image.lut'    : [256, validate_int],  # lookup table
     'image.origin'    : ['upper', str],  # lookup table    
 
