@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.2 2003-05-12 15:53:48 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.3 2003-05-12 19:56:54 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.2  2003-05-12 15:53:48  jdh2358
+# Revision 1.3  2003-05-12 19:56:54  jdh2358
+# update license to version 2 and the docs
+#
+# Revision 1.2  2003/05/12 15:53:48  jdh2358
 # update matplotlib
 #
 # Revision 1.1  2003/05/12 15:50:11  jdh2358
@@ -10,7 +13,7 @@
 #
 
 VERSION = `python setup.py --version`
-DISTFILES = INSTALL README TODO LICENSE CHANGELOG \
+DISTFILES = INSTALL README TODO LICENSE CHANGELOG Makefile GOALS INTERACTIVE \
 	    matplotlib examples examples setup.py
 MODULES = artist cbook gtkutils lines patches colors text matlab figure
 RELEASE = matplotlib-${VERSION}
