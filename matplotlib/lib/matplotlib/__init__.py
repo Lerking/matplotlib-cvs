@@ -21,6 +21,7 @@ Plotting commands
   close    - close a figure window
   colorbar - add a colorbar to the current figure
   cohere   - make a plot of coherence
+  contour  - make a contour plot
   csd      - make a plot of cross spectral density  
   draw     - Force a redraw of the current figure
   errorbar - make an errorbar graph
@@ -140,8 +141,8 @@ Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
 __version__  = '0.65a'
-__revision__ = '$Revision: 1.20 $'
-__date__     = '$Date: 2004-12-09 16:00:38 $'
+__revision__ = '$Revision: 1.21 $'
+__date__     = '$Date: 2004-12-10 17:32:24 $'
 
 import sys, os
 import distutils.sysconfig
