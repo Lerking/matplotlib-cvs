@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.17 2005-02-18 14:53:51 newville Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.18 2005-02-21 04:27:53 newville Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1202,10 +1202,10 @@ class FigureFrameWx(wxFrame):
             self.toolbar = NavigationToolbarWx(self.canvas, True)
         elif matplotlib.rcParams['toolbar']=='toolbar2':
             self.toolbar = NavigationToolbar2Wx(self.canvas)            
+            self.toolbar.set_status_bar(statbar)
         else:
             self.toolbar = None
         
-        self.toolbar.set_status_bar(statbar)
         if self.toolbar is not None:
             self.toolbar.Realize()
             if wxPlatform == '__WXMAC__':
