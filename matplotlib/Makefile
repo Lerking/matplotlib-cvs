@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.26 2004-03-16 20:26:36 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.27 2004-04-20 11:32:35 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.26  2004-03-16 20:26:36  jdh2358
+# Revision 1.27  2004-04-20 11:32:35  jdh2358
+# added finance module
+#
+# Revision 1.26  2004/03/16 20:26:36  jdh2358
 # sync to 0.52 release
 #
 # Revision 1.25  2004/03/15 14:49:46  jdh2358
@@ -127,6 +130,7 @@ clean:
 	find . -name "_tmp*.py" | xargs rm -f;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
 	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
+	find . \( -name "#*" -o -name ".#*" -o -name ".*~" -o -name "*~"\) | xargs rm -f
 
 htmldocs: 
 	cp build/lib.linux-i686-2.3/matplotlib/*.so matplotlib/;\
