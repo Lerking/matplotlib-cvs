@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.34 2004-06-09 13:47:55 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.35 2004-06-15 17:29:53 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.34  2004-06-09 13:47:55  jdh2358
+# Revision 1.35  2004-06-15 17:29:53  jdh2358
+# fixed bad scaling with singleton plots
+#
+# Revision 1.34  2004/06/09 13:47:55  jdh2358
 # added CXX ft2font
 #
 # Revision 1.33  2004/05/19 19:55:18  jdh2358
@@ -119,7 +122,7 @@ clean:
 	${PYTHON} setup.py clean;\
 	find . -name "_tmp*.py" | xargs rm -f;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
-	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
+	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" -o -name "*.tar" -name "*.gz" \) | xargs rm -f
 	find unit \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
 	find . \( -name "#*" -o -name ".#*" -o -name ".*~" -o -name "*~" \) | xargs rm -f
 
