@@ -140,9 +140,9 @@ John D. Hunter <jdhunter@ace.bsd.uhicago.edu>
 Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
-__version__  = '0.70.1'
-__revision__ = '$Revision: 1.29 $'
-__date__     = '$Date: 2005-01-20 22:28:33 $'
+__version__  = '0.71rc1'
+__revision__ = '$Revision: 1.30 $'
+__date__     = '$Date: 2005-01-21 19:52:47 $'
 
 import sys, os
 import distutils.sysconfig
