@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.16 2005-02-15 15:46:29 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.17 2005-02-18 14:53:51 newville Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1060,21 +1060,21 @@ The current aspect ration will be kept."""
         """Capture key press."""
         key = self._get_key(evt)
         evt.Skip()
-        FigureCanvasBase.key_press_event(self, key)
+        FigureCanvasBase.key_press_event(self, key, guiEvent=evt)
     
     def _onKeyUp(self, evt):
         """Release key."""
         key = self._get_key(evt)
         #print 'release key', key
         evt.Skip()
-        FigureCanvasBase.key_release_event(self, key)
+        FigureCanvasBase.key_release_event(self, key, guiEvent=evt)
  
     def _onRightButtonDown(self, evt):
         """Start measuring on an axis."""
         x = evt.GetX()
         y = self.figure.bbox.height() - evt.GetY()
         evt.Skip()
-        FigureCanvasBase.button_press_event(self, x, y, 3)        
+        FigureCanvasBase.button_press_event(self, x, y, 3, guiEvent=evt)        
 
 
     def _onRightButtonUp(self, evt):
@@ -1082,14 +1082,14 @@ The current aspect ration will be kept."""
         x = evt.GetX()
         y = self.figure.bbox.height() - evt.GetY()
         evt.Skip()
-        FigureCanvasBase.button_release_event(self, x, y, 3)        
+        FigureCanvasBase.button_release_event(self, x, y, 3, guiEvent=evt)        
 
     def _onLeftButtonDown(self, evt):
         """Start measuring on an axis."""
         x = evt.GetX()
         y = self.figure.bbox.height() - evt.GetY()
         evt.Skip()
-        FigureCanvasBase.button_press_event(self, x, y, 1)        
+        FigureCanvasBase.button_press_event(self, x, y, 1, guiEvent=evt)        
 
     def _onLeftButtonUp(self, evt):
         """End measuring on an axis."""
@@ -1097,7 +1097,7 @@ The current aspect ration will be kept."""
         y = self.figure.bbox.height() - evt.GetY()
         #print 'release button', 1
         evt.Skip()
-        FigureCanvasBase.button_release_event(self, x, y, 1)
+        FigureCanvasBase.button_release_event(self, x, y, 1, guiEvent=evt)
 
     def _onMouseWheel(self, evt):
         # TODO: implement mouse wheel handler
@@ -1109,7 +1109,7 @@ The current aspect ration will be kept."""
         x = evt.GetX()
         y = self.figure.bbox.height() - evt.GetY()
         evt.Skip()
-        FigureCanvasBase.motion_notify_event(self, x, y)
+        FigureCanvasBase.motion_notify_event(self, x, y, guiEvent=evt)
 
 
 ########################################################################
