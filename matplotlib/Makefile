@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.36 2004-07-09 16:27:34 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.37 2004-07-27 16:46:42 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.36  2004-07-09 16:27:34  jdh2358
+# Revision 1.37  2004-07-27 16:46:42  jdh2358
+# axes connection fix
+#
+# Revision 1.36  2004/07/09 16:27:34  jdh2358
 # make clean purges svg
 #
 # Revision 1.35  2004/06/15 17:29:53  jdh2358
@@ -125,7 +128,7 @@ clean:
 	${PYTHON} setup.py clean;\
 	find . -name "_tmp*.py" | xargs rm -f;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
-	find examples \( -name "*.svg" -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" -o -name "*.tar" -name "*.gz" \) | xargs rm -f
+	find examples \( -name "*.svg" -o -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" -o -name "*.tar" -name "*.gz" \) | xargs rm -f
 	find unit \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
 	find . \( -name "#*" -o -name ".#*" -o -name ".*~" -o -name "*~" \) | xargs rm -f
 
