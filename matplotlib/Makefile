@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.31 2004-05-04 20:39:16 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.32 2004-05-17 15:08:44 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.31  2004-05-04 20:39:16  jdh2358
+# Revision 1.32  2004-05-17 15:08:44  jdh2358
+# updated goals and what's new
+#
+# Revision 1.31  2004/05/04 20:39:16  jdh2358
 # fixed makefile and some text bugs
 #
 # Revision 1.30  2004/04/26 19:41:47  barrett
@@ -123,7 +126,7 @@ pyback:
 
 htmldocs: 
 	cp examples/*.py htdocs/examples;\
-	cp .matplotlibrc NUMARRAY_ISSUES API_CHANGES htdocs/;\
+	cp .matplotlibrc CHANGELOG NUMARRAY_ISSUES API_CHANGES htdocs/;\
 	${PYTHON} license.py ${VERSION} htdocs/license.html.template;\
 	cd htdocs;\
 	${PYTHON} process_docs.py;\
