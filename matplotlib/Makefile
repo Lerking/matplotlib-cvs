@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.14 2004-01-29 19:26:46 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.15 2004-01-30 18:20:55 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.14  2004-01-29 19:26:46  jdh2358
+# Revision 1.15  2004-01-30 18:20:55  jdh2358
+# renamed backend_gtk2 to backend_gtkgd
+#
+# Revision 1.14  2004/01/29 19:26:46  jdh2358
 # added API_CHANGES to htdocs
 #
 # Revision 1.13  2004/01/27 16:18:08  jdh2358
@@ -79,7 +82,7 @@ RELEASE = matplotlib-${VERSION}
 clean: 
 	${PYTHON} setup.py clean;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
-	find examples \(-o -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
+	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
 
 htmldocs: 
 	rm -rf htdocs/matplotlib;\
