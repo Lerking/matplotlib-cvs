@@ -141,8 +141,8 @@ Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
 __version__  = '0.71'
-__revision__ = '$Revision: 1.31 $'
-__date__     = '$Date: 2005-01-21 22:30:45 $'
+__revision__ = '$Revision: 1.32 $'
+__date__     = '$Date: 2005-01-30 12:44:40 $'
 
 import sys, os
 import distutils.sysconfig
@@ -762,8 +762,8 @@ def rcdefaults():
 
 _knownBackends = {
     'Agg':1, 'Cairo':1, 'FltkAgg':1, 'GD':1, 'GDK':1, 'GTK':1, 'GTKAgg':1,
-    'GTKCairo':1, 'Paint':1, 'PS':1, 'SVG':1, 'Template':1, 'TkAgg':1, 'WX':1,
-    'WXAgg':1, }
+    'GTKCairo':1, 'Paint':1, 'PS':1, 'QtAgg':1, 'SVG':1, 'Template':1,
+    'TkAgg':1, 'WX':1, 'WXAgg':1, }
 
 
 known = _knownBackends.keys()
