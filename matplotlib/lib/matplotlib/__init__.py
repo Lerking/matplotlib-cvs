@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64.0a'
-__revision__ = '$Revision: 1.11 $'
-__date__     = '$Date: 2004-10-27 04:39:02 $'
+__revision__ = '$Revision: 1.12 $'
+__date__     = '$Date: 2004-11-03 22:25:08 $'
 
 import sys, os
 import distutils.sysconfig
@@ -264,7 +264,7 @@ class Verbose:
 verbose=Verbose('error')  
 
 
-        
+
 def get_home():
     """
     return the users HOME dir across platforms or None.
