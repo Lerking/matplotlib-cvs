@@ -141,8 +141,8 @@ Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
 __version__  = '0.65'
-__revision__ = '$Revision: 1.24 $'
-__date__     = '$Date: 2004-12-17 15:09:43 $'
+__revision__ = '$Revision: 1.25 $'
+__date__     = '$Date: 2004-12-17 15:20:20 $'
 
 import sys, os
 import distutils.sysconfig
@@ -767,16 +767,16 @@ _knownBackends = {
     'GTKCairo':1, 'Paint':1, 'PS':1, 'SVG':1, 'Template':1, 'TkAgg':1, 'WX':1,
     'WXAgg':1, }
 
-if hasattr(sys,'argv'):         # mod_python doesn't have argv attr
-    known = _knownBackends.keys()
-    for s in sys.argv[1:]:
-        if s.startswith('-d'):  # look for a -d flag
-            name = s[2:].strip()
-            # we don't want to assume all -d flags are backends, eg -debug
-            if name in  known:
-                rcParams['backend'] = name            
-                break
-            
+
+known = _knownBackends.keys()
+for s in sys.argv[1:]:
+    if s.startswith('-d'):  # look for a -d flag
+        name = s[2:].strip()
+        # we don't want to assume all -d flags are backends, eg -debug
+        if name in  known:
+            rcParams['backend'] = name            
+            break
+
 
 
 def use(arg):
