@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.24 2004-03-08 14:56:44 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.25 2004-03-15 14:49:46 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.24  2004-03-08 14:56:44  jdh2358
+# Revision 1.25  2004-03-15 14:49:46  jdh2358
+# updated image to work with data coords; moved image extendsion to _image
+#
+# Revision 1.24  2004/03/08 14:56:44  jdh2358
 # fixed subplot bug
 #
 # Revision 1.23  2004/02/27 14:47:46  jdh2358
@@ -101,6 +104,7 @@ MODULES =					\
 	matplotlib.cbook			\
 	matplotlib.colors			\
 	matplotlib.figure			\
+	matplotlib.image			\
 	matplotlib.legend			\
 	matplotlib.lines			\
 	matplotlib.matlab			\
