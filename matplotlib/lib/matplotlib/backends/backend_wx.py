@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.15 2005-02-08 23:46:30 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.16 2005-02-15 15:46:29 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -151,7 +151,7 @@ class fake_stderr:
 import matplotlib
 from matplotlib import verbose
 from matplotlib.backend_bases import RendererBase, GraphicsContextBase,\
-     FigureCanvasBase, FigureManagerBase, error_msg, NavigationToolbar2, \
+     FigureCanvasBase, FigureManagerBase, NavigationToolbar2, \
      cursors
 from matplotlib._pylab_helpers import Gcf
 from matplotlib.artist import Artist
@@ -1321,8 +1321,8 @@ def _load_bitmap(filename):
 
     bmpFilename = os.path.normpath(os.path.join(basedir, filename))
     if not os.path.exists(bmpFilename):
-        verbose.report_error('Could not find bitmap file "%s"; dying'%bmpFilename)
-        sys.exit()
+        raise IOError('Could not find bitmap file "%s"; dying'%bmpFilename)
+
     bmp = wxBitmap(bmpFilename, wxBITMAP_TYPE_XPM)
     return bmp
 
@@ -1875,5 +1875,5 @@ class PrintoutWx(wx.Printout):
 
 Toolbar = NavigationToolbarWx
 FigureManager = FigureManagerWx
-error_msg = error_msg_wx
+
 
