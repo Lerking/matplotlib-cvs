@@ -15,6 +15,7 @@ Plotting commands
   axis     - Set or return the current axis limits
   bar      - make a bar chart
   barh     - a horizontal bar chart  
+  boxplot  - make a box and whisker plot
   cla      - clear current axes
   clf      - clear a figure window
   close    - close a figure window
@@ -142,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.73.1'
-__revision__ = '$Revision: 1.46 $'
-__date__     = '$Date: 2005-03-27 22:11:57 $'
+__revision__ = '$Revision: 1.47 $'
+__date__     = '$Date: 2005-03-28 14:12:32 $'
 
 import sys, os, warnings
 import distutils.sysconfig
