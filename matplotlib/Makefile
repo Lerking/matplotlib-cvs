@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.1 2003-05-12 15:50:11 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.2 2003-05-12 15:53:48 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.1  2003-05-12 15:50:11  jdh2358
+# Revision 1.2  2003-05-12 15:53:48  jdh2358
+# update matplotlib
+#
+# Revision 1.1  2003/05/12 15:50:11  jdh2358
 # adding Makefile, releases, docs
 #
 
@@ -15,15 +18,14 @@ RELEASE = matplotlib-${VERSION}
 
 clean: 
 	python setup.py clean;
-	rm -rf build dist;
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;
 	find examples -name "*.png"  | xargs rm -f;
 	find matplotlib -name "*.png"  | xargs rm -f;
 
 htmldocs: 
-	rm -f docs/*;
-	cd matplotlib;
-	pydoc -w ${MODULES};
+	rm -f docs/*.html;\
+	cd matplotlib;\
+	pydoc -w ${MODULES};\
 	mv *.html ../docs/
 
 release: ${DISTFILES}
