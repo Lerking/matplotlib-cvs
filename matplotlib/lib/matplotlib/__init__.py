@@ -141,12 +141,14 @@ Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
 __version__  = '0.65'
-__revision__ = '$Revision: 1.23 $'
-__date__     = '$Date: 2004-12-13 16:29:53 $'
+__revision__ = '$Revision: 1.24 $'
+__date__     = '$Date: 2004-12-17 15:09:43 $'
 
 import sys, os
 import distutils.sysconfig
 
+if not hasattr(sys, 'argv'):  # for modpython
+    sys.argv = ['modpython']
 
 """
 Manage user customizations through a rc file.
@@ -193,9 +195,12 @@ class Verbose:
     # parse the verbosity from the command line; flags look like
     # --verbose-error or --verbose-helpful
     _commandLineVerbose = None
+
+
     for arg in sys.argv[1:]:
         if not arg.startswith('--verbose-'): continue
         _commandLineVerbose = arg[10:]
+
         
         
     def __init__(self, level):
