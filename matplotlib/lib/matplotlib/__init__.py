@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64'
-__revision__ = '$Revision: 1.18 $'
-__date__     = '$Date: 2004-11-24 02:05:40 $'
+__revision__ = '$Revision: 1.19 $'
+__date__     = '$Date: 2004-12-09 11:03:26 $'
 
 import sys, os
 import distutils.sysconfig
@@ -758,9 +758,9 @@ def rcdefaults():
 # flag)
 
 _knownBackends = {
-    'PS':1, 'GTK':1, 'Template':1, 'GD':1,
-    'WX':1, 'Paint':1, 'Agg':1, 'GTKAgg':1, 'SVG':1,
-    'TkAgg':1, 'WXAgg':1, 'FltkAgg':1, 'Cairo':1, 'GTKCairo':1,}
+    'Agg':1, 'Cairo':1, 'FltkAgg':1, 'GD':1, 'GDK':1, 'GTK':1, 'GTKAgg':1,
+    'GTKCairo':1, 'Paint':1, 'PS':1, 'SVG':1, 'Template':1, 'TkAgg':1, 'WX':1,
+    'WXAgg':1, }
 
 if hasattr(sys,'argv'):         # mod_python doesn't have argv attr
     known = _knownBackends.keys()
