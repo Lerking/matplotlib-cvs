@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.4 2004-12-09 22:29:31 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.5 2004-12-17 15:06:03 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1281,6 +1281,11 @@ class FigureManagerWx(FigureManagerBase):
     responsible for managing multiple instances of FigureManagerWx.
     
     NB: FigureManagerBase is found in _pylab_helpers
+
+    public attrs
+
+    canvas - a FigureCanvasWx(wxPanel) instance
+    window - a wxFrame instance - http://www.lpthe.jussieu.fr/~zeitlin/wxWindows/docs/wxwin_wxframe.html#wxframe
     """
     def __init__(self, canvas, num, frame):
         DEBUG_MSG("__init__()", 1, self)
