@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.19 2005-03-14 19:38:37 newville Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.20 2005-03-19 15:19:54 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -113,8 +113,8 @@ except:
     print >>sys.stderr, "Matplotlib backend_wx requires wxPython be installed"
     sys.exit()    
 
-# wxapp = wxPySimpleApp()
-# wxapp.SetExitOnFrameDelete(True)
+wxapp = wxPySimpleApp()
+wxapp.SetExitOnFrameDelete(True)
 
 
 #!!! this is the call that is causing the exception swallowing !!!
@@ -1156,8 +1156,8 @@ def show():
         figwin.canvas.draw()
  
     if show._needmain and not matplotlib.is_interactive():
-        wxapp = wx.PySimpleApp()
-        wxapp.SetExitOnFrameDelete(True)
+        #wxapp = wx.PySimpleApp()
+        #wxapp.SetExitOnFrameDelete(True)
         wxapp.MainLoop()
         show._needmain = False        
 show._needmain = True
