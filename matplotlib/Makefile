@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.17 2004-01-30 21:33:19 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.18 2004-02-11 00:07:44 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.17  2004-01-30 21:33:19  jdh2358
+# Revision 1.18  2004-02-11 00:07:44  jdh2358
+# relocated gtkgd ext mod
+#
+# Revision 1.17  2004/01/30 21:33:19  jdh2358
 # last changes for 0.50e
 #
 # Revision 1.16  2004/01/30 19:58:53  jdh2358
@@ -62,16 +65,19 @@ DISTFILES = API_CHANGES KNOWN_BUGS INSTALL README TODO LICENSE	\
 	CHANGELOG Makefile GOALS INTERACTIVE			\
 	MANIFEST.in matplotlib examples setup.py
 
-MODULES =                                       \
+MODULES =					\
+        matplotlib.afm				\
 	matplotlib.artist			\
 	matplotlib.axes				\
 	matplotlib.axis				\
 	matplotlib.backend_bases		\
+	matplotlib.backends.backend_agg		\
 	matplotlib.backends.backend_gd		\
 	matplotlib.backends.backend_gtk		\
-	matplotlib.backends.backend_gtkgd		\
+	matplotlib.backends.backend_gtkgd	\
 	matplotlib.backends.backend_ps		\
 	matplotlib.backends.backend_template	\
+        matplotlib.backends.backend_wx          \
 	matplotlib.cbook			\
 	matplotlib.figure			\
 	matplotlib.legend			\
@@ -79,10 +85,9 @@ MODULES =                                       \
 	matplotlib.matlab			\
 	matplotlib.mlab				\
 	matplotlib.patches			\
+	matplotlib.table			\
 	matplotlib.text				\
 	matplotlib.transforms			\
-        matplotlib.afm				\
-        matplotlib.backends.backend_wx
 
 RELEASE = matplotlib-${VERSION}
 
