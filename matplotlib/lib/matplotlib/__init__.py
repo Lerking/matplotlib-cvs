@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64.0a'
-__revision__ = '$Revision: 1.12 $'
-__date__     = '$Date: 2004-11-03 22:25:08 $'
+__revision__ = '$Revision: 1.13 $'
+__date__     = '$Date: 2004-11-04 15:09:07 $'
 
 import sys, os
 import distutils.sysconfig
@@ -756,15 +756,22 @@ def rcdefaults():
 # Allow command line access to the backend with -d (matlab compatible
 # flag)
 
+_knownBackends = {
+    'PS':1, 'GTK':1, 'Template':1, 'GD':1,
+    'WX':1, 'Paint':1, 'Agg':1, 'GTKAgg':1, 'SVG':1,
+    'TkAgg':1, 'WXAgg':1, 'FltkAgg':1, 'Cairo':1, 'GTKCairo':1,}
+
 if hasattr(sys,'argv'):         # mod_python doesn't have argv attr
+    known = _knownBackends.keys()
     for s in sys.argv[1:]:
         if s.startswith('-d'):  # look for a -d flag
-            rcParams['backend'] = s[2:].strip()
-            break
+            name = s[2:].strip()
+            # we don't want to assume all -d flags are backends, eg -debug
+            if name in  known:
+                rcParams['backend'] = name            
+                break
+            
 
-_knownBackends = {'PS':1, 'GTK':1, 'Template':1, 'GD':1,
-                  'WX':1, 'Paint':1, 'Agg':1, 'GTKAgg':1, 'SVG':1,
-                  'TkAgg':1, 'WXAgg':1, 'FltkAgg':1, 'Cairo':1, 'GTKCairo':1,}
 
 def use(arg):
     """
