@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.14 2005-01-17 18:05:01 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.15 2005-02-08 23:46:30 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -896,6 +896,7 @@ The current aspect ration will be kept."""
 
             ps.print_figure(filename, 72, facecolor, edgecolor)
             self.figure.dpi.set(origDPI)
+            self.figure.set_canvas(self)
             return
         elif ext.find('svg')>=0:
             # enable svg save from WX backend only import this if we
@@ -907,7 +908,8 @@ The current aspect ration will be kept."""
             svg = self.switch_backends(FigureCanvasSVG)
             svg.figure.dpi.set(72)
             svg.print_figure(filename, 72, facecolor, edgecolor)
-            self.figure.dpi.set(origDPI)                                       
+            self.figure.dpi.set(origDPI)
+            self.figure.set_canvas(self)
             return
 
         if not self._isRealized:
