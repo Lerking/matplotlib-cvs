@@ -20,7 +20,10 @@ embedding_in_wx.py, which provides these features.
 
 Modification History:
 $Log: dynamic_demo_wx.py,v $
-Revision 1.4  2004-05-03 12:12:26  jdh2358
+Revision 1.5  2004-06-26 06:37:20  astraw
+Trivial bugfix to eliminate IndexError
+
+Revision 1.4  2004/05/03 12:12:26  jdh2358
 added bang header to examples
 
 Revision 1.3  2004/03/08 22:17:20  jdh2358
@@ -105,7 +108,7 @@ class PlotFigure(wxFrame):
 		
     def onTimer(self, evt):
         self.count += 1
-        if self.count > 99: self.count = 0
+        if self.count >= 60: self.count = 0
         self.lines[0].set_data(self.ind, self.X[:,self.count])
         self.canvas.draw()
         self.canvas.gui_repaint()
