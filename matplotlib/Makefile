@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.28 2004-04-20 22:53:37 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.29 2004-04-21 15:28:55 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.28  2004-04-20 22:53:37  jdh2358
+# Revision 1.29  2004-04-21 15:28:55  jdh2358
+# sync to 0.53
+#
+# Revision 1.28  2004/04/20 22:53:37  jdh2358
 # removed tz info from dates; updated htdocs
 #
 # Revision 1.27  2004/04/20 11:32:35  jdh2358
@@ -102,7 +105,7 @@ clean:
 	find . -name "_tmp*.py" | xargs rm -f;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
 	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
-	find . \( -name "#*" -o -name ".#*" -o -name ".*~" -o -name "*~"\) | xargs rm -f
+	find . \( -name "#*" -o -name ".#*" -o -name ".*~" -o -name "*~" \) | xargs rm -f
 
 
 release: ${DISTFILES}
