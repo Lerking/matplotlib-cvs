@@ -1,6 +1,6 @@
 /*
  * The Python Imaging Library.
- * $Id: _tkagg.cpp,v 1.2 2004-02-27 14:47:49 jdh2358 Exp $ 
+ * $Id: _tkagg.cpp,v 1.3 2004-03-08 22:17:21 jdh2358 Exp $ 
  *
  */
 
@@ -13,7 +13,12 @@
 #include <stdlib.h>
 
 extern "C" {
-#include <tk.h> 
+#ifdef __APPLE__
+#  include <Tcl/tcl.h>
+#  include <Tk/tk.h>
+#else
+#  include <tk.h> 
+#endif
 };
 
 #include "_backend_agg.h"
