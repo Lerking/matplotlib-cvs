@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.9 2004-12-28 23:49:14 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.10 2004-12-30 16:16:07 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -694,6 +694,7 @@ class FigureCanvasWx(FigureCanvasBase, wxPanel):
 
         self._key = None
         self._button = None
+        self._lastx, self._lasty = None, None
         
         wxPanel.__init__(self, parent, id, size=wxSize(w, h))
         # Create the drawing bitmap
@@ -1052,12 +1053,12 @@ The current aspect ration will be kept."""
             
         if key: self._key = key.lower()
         else:   self._key = key
-        FigureCanvasBase.key_press_event(self, self._key)
+        FigureCanvasBase.key_press_event(self, self._key, self._lastx, self._lasty)
         evt.Skip()
         
     def _onKeyUp(self, evt):
         """Release key."""
-        FigureCanvasBase.key_release_event(self, self._key)
+        FigureCanvasBase.key_release_event(self, self._key, self._lastx, self._lasty)
         self._key = None
         evt.Skip()
 
@@ -1105,7 +1106,7 @@ The current aspect ration will be kept."""
         #print 'motion', x, y
         evt.Skip()
         FigureCanvasBase.motion_notify_event(self, x, y, self._button, self._key)
-
+        self._lastx, self._lasty = x, y
     
 
 ########################################################################
