@@ -141,9 +141,9 @@ the exception of those in mlab.py provided by matplotlib.
 """
 from __future__ import generators
 
-__version__  = '0.72'
-__revision__ = '$Revision: 1.39 $'
-__date__     = '$Date: 2005-02-21 14:35:27 $'
+__version__  = '0.73'
+__revision__ = '$Revision: 1.40 $'
+__date__     = '$Date: 2005-02-22 18:45:57 $'
 
 import sys, os, warnings
 import distutils.sysconfig
