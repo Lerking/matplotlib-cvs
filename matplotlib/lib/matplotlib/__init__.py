@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64'
-__revision__ = '$Revision: 1.14 $'
-__date__     = '$Date: 2004-11-08 20:52:05 $'
+__revision__ = '$Revision: 1.15 $'
+__date__     = '$Date: 2004-11-10 08:12:19 $'
 
 import sys, os
 import distutils.sysconfig
@@ -813,3 +813,6 @@ def tk_window_focus():
 verbose.report('matplotlib version %s'%__version__)
 verbose.report('verbose.level %s'%verbose.level)
 verbose.report('interactive is %s'%rcParams['interactive'])
+
+# True if we are running under Py2EXE (or similar)
+FROZEN = hasattr(sys, 'frozen')
