@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.63.4'
-__revision__ = '$Revision: 1.8 $'
-__date__     = '$Date: 2004-10-01 14:07:24 $'
+__revision__ = '$Revision: 1.9 $'
+__date__     = '$Date: 2004-10-21 19:57:49 $'
 
 import sys, os
 import distutils.sysconfig
@@ -525,6 +525,8 @@ defaultParams = {
     'axes.grid'         : [False, validate_bool],   # display grid or not
     'axes.labelsize'    : ['medium', validate_fontsize], # fontsize of the x any y labels
     'axes.labelcolor'   : ['k', validate_color],    # color of axis label
+
+    'polaraxes.grid'         : [True, validate_bool],   # display grid or not    
 
     # tick properties
     'tick.major.size'   : [5, validate_float],      # major tick size in points
