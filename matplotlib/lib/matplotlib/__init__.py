@@ -142,8 +142,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.73'
-__revision__ = '$Revision: 1.40 $'
-__date__     = '$Date: 2005-02-22 18:45:57 $'
+__revision__ = '$Revision: 1.41 $'
+__date__     = '$Date: 2005-02-23 21:46:52 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -545,6 +545,7 @@ defaultParams = {
 
     'tk.window_focus'   : [ False, validate_bool],  # Maintain shell focus for TkAgg
     'tk.pythoninspect'   : [ False, validate_bool],  # Set PYTHONINSPECT
+    'ps.useafm'   : [ False, validate_bool],  # Set PYTHONINSPECT
     'plugins.directory' : ['.matplotlib_plugins', str], # where plugin directory is locate
 
     }
