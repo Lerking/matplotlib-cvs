@@ -1,8 +1,11 @@
 /* _backend_agg.h	-- 
  *
- * $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/src/_backend_agg.h,v 1.4 2004-03-03 19:27:43 jdh2358 Exp $
+ * $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/src/_backend_agg.h,v 1.5 2004-03-12 23:25:09 jdh2358 Exp $
  * $Log: _backend_agg.h,v $
- * Revision 1.4  2004-03-03 19:27:43  jdh2358
+ * Revision 1.5  2004-03-12 23:25:09  jdh2358
+ * fixed images to fit in subplots
+ *
+ * Revision 1.4  2004/03/03 19:27:43  jdh2358
  * fixed gtk vert text bug
  *
  * Revision 1.3  2004/03/02 20:47:52  jdh2358
@@ -24,6 +27,7 @@
 #include <cstdio>
 
 #include "agg_arrowhead.h"
+#include "agg_basics.h"
 #include "agg_conv_concat.h"
 #include "agg_conv_contour.h"
 #include "agg_conv_curve.h"
