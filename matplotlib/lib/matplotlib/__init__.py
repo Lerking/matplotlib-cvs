@@ -1,10 +1,10 @@
 from __future__ import generators
 """
-This is a matlab style functional interface the matplotlib.
+This is a matlab(TM) style functional interface the matplotlib.
 
-The following matlab compatible commands are provided by
+The following matlab(TM) compatible commands are provided by
 
-   >>> from matplotlib.matlab import *
+   >>> from pylab import *
 
 Plotting commands
 
@@ -139,10 +139,9 @@ John D. Hunter <jdhunter@ace.bsd.uhicago.edu>
 Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
-
-__version__  = '0.64'
-__revision__ = '$Revision: 1.19 $'
-__date__     = '$Date: 2004-12-09 11:03:26 $'
+__version__  = '0.65a'
+__revision__ = '$Revision: 1.20 $'
+__date__     = '$Date: 2004-12-09 16:00:38 $'
 
 import sys, os
 import distutils.sysconfig
