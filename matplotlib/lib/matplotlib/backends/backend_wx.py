@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.8 2004-12-28 23:43:23 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.9 2004-12-28 23:49:14 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1042,7 +1042,6 @@ The current aspect ration will be kept."""
     def _onKeyDown(self, evt):
         """Capture key press."""
 
-        evt.Skip()
         keyval = evt.m_keyCode
         if self.keyvald.has_key(keyval):
             key = self.keyvald[keyval]
@@ -1053,14 +1052,14 @@ The current aspect ration will be kept."""
             
         if key: self._key = key.lower()
         else:   self._key = key
-
         FigureCanvasBase.key_press_event(self, self._key)
+        evt.Skip()
         
     def _onKeyUp(self, evt):
         """Release key."""
-        evt.Skip()
         FigureCanvasBase.key_release_event(self, self._key)
         self._key = None
+        evt.Skip()
 
     def _onRightButtonDown(self, evt):
         """Start measuring on an axis."""
