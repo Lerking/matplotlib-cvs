@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.10 2003-11-14 00:07:29 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.11 2003-11-19 16:45:09 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.10  2003-11-14 00:07:29  jdh2358
+# Revision 1.11  2003-11-19 16:45:09  jdh2358
+# updated plotting commands list
+#
+# Revision 1.10  2003/11/14 00:07:29  jdh2358
 # added log transforms to new API
 #
 # Revision 1.9  2003/11/06 23:09:53  jdh2358
@@ -41,6 +44,7 @@ DISTFILES = INSTALL README TODO LICENSE CHANGELOG Makefile GOALS INTERACTIVE \
 MODULES = matplotlib.afm matplotlib.axes matplotlib.artist		\
 	matplotlib.backend_bases matplotlib.cbook matplotlib.lines	\
 	matplotlib.patches matplotlib.matlab matplotlib.mlab		\
+	matplotlib.transforms		\
 	matplotlib.backends.backend_gtk matplotlib.backends.backend_gd	\
 	matplotlib.backends.backend_ps 	matplotlib.backends.backend_template \
         matplotlib.backends.backend_wx
