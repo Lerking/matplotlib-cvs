@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.37 2004-07-27 16:46:42 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.38 2004-08-05 15:20:53 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.37  2004-07-27 16:46:42  jdh2358
+# Revision 1.38  2004-08-05 15:20:53  jdh2358
+# some htdocs fixes
+#
+# Revision 1.37  2004/07/27 16:46:42  jdh2358
 # axes connection fix
 #
 # Revision 1.36  2004/07/09 16:27:34  jdh2358
@@ -142,7 +145,7 @@ pyback:
 
 htmldocs: 
 	cp examples/*.py htdocs/examples;\
-	cp .matplotlibrc CHANGELOG NUMARRAY_ISSUES API_CHANGES htdocs/;\
+	cp .matplotlibrc INSTALL CHANGELOG NUMARRAY_ISSUES API_CHANGES htdocs/;\
 	${PYTHON} license.py ${VERSION} htdocs/license.html.template;\
 	cd htdocs;\
 	${PYTHON} process_docs.py;\
