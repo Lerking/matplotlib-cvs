@@ -141,8 +141,8 @@ Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
 __version__  = '0.65a'
-__revision__ = '$Revision: 1.21 $'
-__date__     = '$Date: 2004-12-10 17:32:24 $'
+__revision__ = '$Revision: 1.22 $'
+__date__     = '$Date: 2004-12-10 21:35:17 $'
 
 import sys, os
 import distutils.sysconfig
@@ -814,6 +814,8 @@ def tk_window_focus():
 verbose.report('matplotlib version %s'%__version__)
 verbose.report('verbose.level %s'%verbose.level)
 verbose.report('interactive is %s'%rcParams['interactive'])
+verbose.report('platform is %s'%sys.platform)
+verbose.report('loaded modules: %s'%sys.modules.keys(), 'debug')
 
 # True if we are running under Py2EXE (or similar)
 FROZEN = hasattr(sys, 'frozen')
