@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.19 2004-02-11 19:16:01 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.20 2004-02-16 18:04:55 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.19  2004-02-11 19:16:01  jdh2358
+# Revision 1.20  2004-02-16 18:04:55  jdh2358
+# fexed wx to work on windows and linux
+#
+# Revision 1.19  2004/02/11 19:16:01  jdh2358
 # reorganized table
 #
 # Revision 1.18  2004/02/11 00:07:44  jdh2358
@@ -83,6 +86,7 @@ MODULES =					\
 	matplotlib.backends.backend_template	\
         matplotlib.backends.backend_wx          \
 	matplotlib.cbook			\
+	matplotlib.colors			\
 	matplotlib.figure			\
 	matplotlib.legend			\
 	matplotlib.lines			\
