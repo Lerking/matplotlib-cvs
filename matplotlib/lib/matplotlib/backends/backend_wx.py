@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.6 2004-12-21 23:31:01 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.7 2004-12-22 18:18:38 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1298,8 +1298,6 @@ class FigureManagerWx(FigureManagerBase):
             'this will be called whenever the current axes is changed'        
             if self.tb != None: self.tb.update()
         self.canvas.figure.add_axobserver(notify_axes_change)
-
-
         
     def destroy(self, *args):
         DEBUG_MSG("destroy()", 1, self)

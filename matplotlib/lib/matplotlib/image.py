@@ -97,7 +97,15 @@ ACCEPTS: float
         """
         Artist.set_alpha(self, alpha)
         self._imcache = None
-        
+
+    def changed(self):
+        """
+        Call this whenever the mappable is changed so observers can
+        update state
+        """
+        self._imcache = None
+        cm.ScalarMappable.changed(self)
+
     def make_image(self, flipy):        
         if self._A is not None:
             if self._imcache is None:
