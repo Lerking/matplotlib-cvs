@@ -1,8 +1,11 @@
 # Makefile for matplotlib
 # Copyright (C) 2003  <jdhunter@ace.bsd.uchicago.edu>
-# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.21 2004-02-17 15:10:43 jdh2358 Exp $
+# $Header: /home/pauli/tmp/mpl/matplotlib/matplotlib/Makefile,v 1.22 2004-02-18 18:11:24 jdh2358 Exp $
 # $Log: Makefile,v $
-# Revision 1.21  2004-02-17 15:10:43  jdh2358
+# Revision 1.22  2004-02-18 18:11:24  jdh2358
+# updated setepext to work with darwin
+#
+# Revision 1.21  2004/02/17 15:10:43  jdh2358
 # updating to 0.50
 #
 # Revision 1.20  2004/02/16 18:04:55  jdh2358
@@ -105,6 +108,7 @@ RELEASE = matplotlib-${VERSION}
 
 clean: 
 	${PYTHON} setup.py clean;\
+	find . -name "_tmp*.py" | xargs rm -f;\
 	find . \( -name "*~" -o -name "*.pyc" \) | xargs rm -f;\
 	find examples \( -name "*.png" -o -name "*.ps"  -o -name "*.jpg" -o -name "*.eps" \) | xargs rm -f
 
