@@ -1,4 +1,3 @@
-from __future__ import generators
 """
 This is a matlab(TM) style functional interface the matplotlib.
 
@@ -140,9 +139,11 @@ John D. Hunter <jdhunter@ace.bsd.uhicago.edu>
 Most of the other commands are from the Numeric, MLab and FFT, with
 the exception of those in mlab.py provided by matplotlib.
 """
+from __future__ import generators
+
 __version__  = '0.72'
-__revision__ = '$Revision: 1.38 $'
-__date__     = '$Date: 2005-02-15 15:46:11 $'
+__revision__ = '$Revision: 1.39 $'
+__date__     = '$Date: 2005-02-21 14:35:27 $'
 
 import sys, os, warnings
 import distutils.sysconfig
