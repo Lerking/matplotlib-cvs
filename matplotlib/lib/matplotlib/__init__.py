@@ -141,8 +141,8 @@ the exception of those in mlab.py provided by matplotlib.
 """
 
 __version__  = '0.64'
-__revision__ = '$Revision: 1.17 $'
-__date__     = '$Date: 2004-11-23 16:00:11 $'
+__revision__ = '$Revision: 1.18 $'
+__date__     = '$Date: 2004-11-24 02:05:40 $'
 
 import sys, os
 import distutils.sysconfig
@@ -817,3 +817,15 @@ verbose.report('interactive is %s'%rcParams['interactive'])
 
 # True if we are running under Py2EXE (or similar)
 FROZEN = hasattr(sys, 'frozen')
+
+
+class MPLError (Exception):
+    """Exception for Matplotlib errors
+    Attributes:
+        message -- explanation of the error
+    """
+    def __init__ (self, message):
+        self.message = message
+
+    def __str__ (self):
+        return self.message
