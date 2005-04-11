@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.23 2005-04-11 19:47:45 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.24 2005-04-11 21:07:52 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -690,7 +690,7 @@ class FigureCanvasWx(FigureCanvasBase, wx.Panel):
         l,b,w,h = figure.bbox.get_bounds()
         w = int(math.ceil(w))
         h = int(math.ceil(h))
-
+ 
         wx.Panel.__init__(self, parent, id, size=wx.Size(w, h))
         # Create the drawing bitmap
         self.bitmap =wx.EmptyBitmap(w, h)
