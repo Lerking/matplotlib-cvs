@@ -142,9 +142,9 @@ the exception of those in mlab.py provided by matplotlib.
 """
 from __future__ import generators
 
-__version__  = '0.74'
-__revision__ = '$Revision: 1.48 $'
-__date__     = '$Date: 2005-03-31 19:34:59 $'
+__version__  = '0.80'
+__revision__ = '$Revision: 1.49 $'
+__date__     = '$Date: 2005-04-12 14:45:58 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -307,9 +307,15 @@ def _get_data_path():
     # C:\Python23\share\matplotlib into your dist dir.  See
     # http://starship.python.net/crew/theller/moin.cgi/MatPlotLib
     # for more info
-    if sys.platform=='win32' and sys.frozen:
-        path = os.path.join(os.path.split(sys.path[0])[0], 'matplotlibdata')
-        return path
+
+    if sys.platform=='win32' and sys.frozen: 
+        path = os.path.join(os.path.split(sys.path[0])[0], 'matplotlibdata') 
+        if os.path.isdir(path):  return path 
+        else:
+            # Try again assuming sys.path[0] is a dir not a exe 
+            path = os.path.join(sys.path[0], 'matplotlibdata') 
+            if os.path.isdir(path): return path
+
     raise RuntimeError('Could not find the matplotlib data files')
 
 get_data_path = verbose.wrap('matplotlib data path %s', _get_data_path, always=False)

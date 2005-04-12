@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.24 2005-04-11 21:07:52 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.25 2005-04-12 14:46:01 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -1216,8 +1216,10 @@ class FigureFrameWx(wx.Frame):
             pos = wx.DefaultPosition
         else:
             pos =wx.Point(20,20)
+        l,b,w,h = fig.bbox.get_bounds()
         wx.Frame.__init__(self, parent=None, id=-1, pos=pos,
-                          title="Figure %d" % num)
+                          title="Figure %d" % num,
+                          size=(w,h))
         DEBUG_MSG("__init__()", 1, self)
         self.num = num
 
