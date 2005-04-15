@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.25 2005-04-12 14:46:01 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.26 2005-04-15 16:02:16 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -669,10 +669,16 @@ class FigureCanvasWx(FigureCanvasBase, wx.Panel):
     implements a wx.Sizer to control the displayed control size - but we give a
     hint as to our preferred minimum size.
     """
-    keyvald = {308 : 'control',
-               306 : 'shift',
-               307 : 'alt',
-               }
+
+    keyvald = {
+        wx.WXK_CONTROL : 'control',
+        wx.WXK_SHIFT   : 'shift',
+        wx.WXK_ALT     : 'alt',
+        wx.WXK_LEFT    : 'left',
+        wx.WXK_UP      : 'up',
+        wx.WXK_RIGHT   : 'right',
+        wx.WXK_DOWN    : 'down',
+        }    
 
     def __init__(self, parent, id, figure):
         """
