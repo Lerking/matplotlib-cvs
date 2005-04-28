@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.80'
-__revision__ = '$Revision: 1.49 $'
-__date__     = '$Date: 2005-04-12 14:45:58 $'
+__revision__ = '$Revision: 1.50 $'
+__date__     = '$Date: 2005-04-28 00:25:43 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -451,6 +451,16 @@ def validate_verbose_fileo(s):
         else:
             verbose.fileo = fileo
     return verbose.fileo
+    
+    
+def validate_ps_papersize(s):
+    papertypes = ['executive', 'letter', 'legal', 'ledger', 'a0', 'a1', 'a2', 'a3', 'a4',
+                     'a5', 'a6', 'a7', 'a8', 'a9', 'a10', 'b0', 'b1', 'b2', 'b3', 'b4', 'b5',
+                     'b6', 'c0', 'c1', 'c2', 'c3', 'c4', 'c5', 'c6']
+    if s.lower() in papertypes:
+        return s.lower()
+    else:
+        raise ValueError('ps.papersize must be one of: %s'% ', '.join(papertypes))
 
 
 # a map from key -> value, converter
@@ -552,6 +562,7 @@ defaultParams = {
 
     'tk.window_focus'   : [ False, validate_bool],  # Maintain shell focus for TkAgg
     'tk.pythoninspect'   : [ False, validate_bool],  # Set PYTHONINSPECT
+    'ps.papersize'      : [ 'letter', validate_ps_papersize], # Set the papersize/type
     'ps.useafm'   : [ False, validate_bool],  # Set PYTHONINSPECT
     'plugins.directory' : ['.matplotlib_plugins', str], # where plugin directory is locate
 
