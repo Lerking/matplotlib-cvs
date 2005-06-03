@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.81alpha'
-__revision__ = '$Revision: 1.54 $'
-__date__     = '$Date: 2005-05-27 02:30:26 $'
+__revision__ = '$Revision: 1.55 $'
+__date__     = '$Date: 2005-06-03 17:00:40 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -465,6 +465,13 @@ def validate_ps_papersize(s):
         return s
     else:
         raise ValueError('ps.papersize must be one of: %s'% ', '.join(papertypes))
+        
+
+def validate_tex_engine(s):
+    if s.lower() in ['tex', 'latex']:
+        return s
+    else:
+        raise ValueError('text.tex.engine must be one of: tex, latex')
 
 
 # a map from key -> value, converter
@@ -511,10 +518,12 @@ defaultParams = {
     'font.cursive'      : ['cursive', validate_comma_sep_str],
     'font.fantasy'      : ['fantasy', validate_comma_sep_str],
     'font.monospace'    : ['monospace', validate_comma_sep_str],
+    'font.latex.package': ['type1cm', str],          # LaTeX font package: txfonts, pslatex, ...
 
     # text props
     'text.color'        : ['k', validate_color],     # black
-    'text.usetex'       : [False, validate_bool],     # black    
+    'text.usetex'       : [False, validate_bool],
+    'text.tex.engine'   : ['tex', validate_tex_engine], # TeX or LaTeX
     'text.fontstyle'    : ['normal', str],
     'text.fontangle'    : ['normal', str],
     'text.fontvariant'  : ['normal', str],
