@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.81alpha'
-__revision__ = '$Revision: 1.56 $'
-__date__     = '$Date: 2005-06-03 21:46:17 $'
+__revision__ = '$Revision: 1.57 $'
+__date__     = '$Date: 2005-06-05 04:27:38 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -579,6 +579,7 @@ defaultParams = {
     'tk.pythoninspect'   : [ False, validate_bool],  # Set PYTHONINSPECT
     'ps.papersize'      : [ 'letter', validate_ps_papersize], # Set the papersize/type
     'ps.useafm'   : [ False, validate_bool],  # Set PYTHONINSPECT
+    'ps.distill'        : [ False, validate_bool],  # use ghostscript to distill ps output
     'plugins.directory' : ['.matplotlib_plugins', str], # where plugin directory is locate
 
     }
@@ -831,7 +832,7 @@ def tk_window_focus():
      This currently works only for python.exe and IPython.exe.
      Both IDLE and Pythonwin.exe fail badly when tk_window_focus is on."""
     if rcParams['backend'] != 'TkAgg':
-	return False    
+        return False    
     return rcParams['tk.window_focus']
 
 
