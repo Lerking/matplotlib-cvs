@@ -142,9 +142,9 @@ the exception of those in mlab.py provided by matplotlib.
 """
 from __future__ import generators
 
-__version__  = '0.81rc1'
-__revision__ = '$Revision: 1.59 $'
-__date__     = '$Date: 2005-06-06 13:53:55 $'
+__version__  = '0.81'
+__revision__ = '$Revision: 1.60 $'
+__date__     = '$Date: 2005-06-06 19:40:44 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -578,7 +578,7 @@ defaultParams = {
     'ps.papersize'      : [ 'letter', validate_ps_papersize], # Set the papersize/type
     'ps.useafm'   : [ False, validate_bool],  # Set PYTHONINSPECT
     'ps.usedistiller'   : [ False, validate_bool],  # use ghostscript to distill ps output
-    'ps.distiller.res'  : [600, validate_int],       # dpi
+    'ps.distiller.res'  : [6000, validate_int],       # dpi
     'plugins.directory' : ['.matplotlib_plugins', str], # where plugin directory is locate
 
     }
