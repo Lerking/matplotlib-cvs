@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.81.1'
-__revision__ = '$Revision: 1.61 $'
-__date__     = '$Date: 2005-06-09 13:29:33 $'
+__revision__ = '$Revision: 1.62 $'
+__date__     = '$Date: 2005-06-13 15:47:52 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -714,15 +714,10 @@ def rc(group, **kwargs):
         'mec' : 'markeredgecolor'
         'mew' : 'markeredgewidth'
         'aa'  : 'antialiased'            
-        'l'   : 'lines'
-        'a'   : 'axes'
-        'f'   : 'figure'
-        'p'   : 'patches'
-        'g'   : 'grid'
 
     Thus you could abbreviate the above rc command as
 
-          rc('l', lw=2, c='r')
+          rc('lines', lw=2, c='r')
 
 
     Note you can use python's kwargs dictionary facility to store
@@ -750,11 +745,6 @@ def rc(group, **kwargs):
         'mec' : 'markeredgecolor',
         'mew' : 'markeredgewidth',
         'aa'  : 'antialiased',                        
-        'l'   : 'lines',
-        'a'   : 'axes',
-        'f'   : 'figure',
-        'p'   : 'patches',
-        'g'   : 'grid',        
         }
     
     for k,v in kwargs.items():
