@@ -3,20 +3,33 @@ from pylab import *
 t = arange(0.0, 2.0, 0.01)
 s0 = sin(2*pi*t)
 s1 = sin(4*pi*t)
-s2 = sin(6*pi*t)
+s2 = sin(8*pi*t)
 
 ax = subplot(111)
-l, = ax.plot(t, s0)
+l, = ax.plot(t, s0, lw=2, color='red')
 subplots_adjust(left=0.3)
 
-rax = axes([0.05, 0.4, 0.175, 0.175])
-radio = RadioButtons(rax, ('button 1', 'button 2', 'button 3'))
-
-def func(label):
-    if label=='button 1': l.set_ydata(s0)
-    elif label=='button 2': l.set_ydata(s1)
-    elif label=='button 3': l.set_ydata(s2)
+rax = axes([0.05, 0.7, 0.175, 0.175])
+radio = RadioButtons(rax, ('2 Hz', '4 Hz', '8 Hz'))
+def hzfunc(label):
+    hzdict = {'2 Hz':s0, '4 Hz':s1, '8 Hz':s2}
+    ydata = hzdict[label]
+    l.set_ydata(ydata)
     draw()
-radio.on_clicked(func)
+radio.on_clicked(hzfunc)
+
+rax = axes([0.05, 0.4, 0.175, 0.175])
+radio = RadioButtons(rax, ('red', 'blue', 'green'))
+def colorfunc(label):
+    l.set_color(label)
+    draw()
+radio.on_clicked(colorfunc)
+
+rax = axes([0.05, 0.1, 0.175, 0.175])
+radio = RadioButtons(rax, ('-', '--', '-.', 'steps', ':'))
+def stylefunc(label):
+    l.set_linestyle(label)
+    draw()
+radio.on_clicked(stylefunc)
     
 show()
