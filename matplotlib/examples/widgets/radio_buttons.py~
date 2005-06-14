@@ -1,4 +1,6 @@
+
 from matplotlib.widgets import RadioButtons
+
 from pylab import *
 t = arange(0.0, 2.0, 0.01)
 s0 = sin(2*pi*t)
