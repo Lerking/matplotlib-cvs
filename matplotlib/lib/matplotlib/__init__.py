@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.82'
-__revision__ = '$Revision: 1.65 $'
-__date__     = '$Date: 2005-06-15 18:27:37 $'
+__revision__ = '$Revision: 1.66 $'
+__date__     = '$Date: 2005-06-15 19:56:36 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -816,9 +816,9 @@ def rcdefaults():
 # flag)
 
 _knownBackends = {
-    'Agg2':1, 'Agg':1, 'Cairo':1, 'FltkAgg':1, 'GD':1, 'GDK':1, 'GTK':1, 'GTKAgg':1,
-    'GTKCairo':1, 'Paint':1, 'PS':1, 'LaTeX':1, 'QtAgg':1, 'SVG':1, 'Template':1,
-    'TkAgg':1, 'WX':1, 'WXAgg':1, }
+    'Agg2':1, 'Agg':1, 'Cairo':1, 'CocoaAgg':1, 'FltkAgg':1, 'GD':1, 'GDK':1,
+    'GTK':1, 'GTKAgg':1, 'GTKCairo':1, 'Paint':1, 'PS':1, 'LaTeX':1, 'QtAgg':1,
+    'SVG':1, 'Template':1, 'TkAgg':1, 'WX':1, 'WXAgg':1, }
 
 
 known = _knownBackends.keys()
