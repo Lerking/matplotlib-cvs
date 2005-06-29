@@ -92,7 +92,7 @@ Examples which work on this release:
  (3) - Clipping seems to be broken.
 """
 
-cvs_id = '$Id: backend_wx.py,v 1.29 2005-06-15 17:14:01 jdh2358 Exp $'
+cvs_id = '$Id: backend_wx.py,v 1.30 2005-06-29 12:57:13 jdh2358 Exp $'
 
 import sys, os, os.path, math, StringIO
 
@@ -822,6 +822,27 @@ The current aspect ration will be kept."""
             self.printerData.SetOrientation(wx.PORTRAIT)
         dlg.Destroy()
         return
+
+    def Printer_Setup2(self, event=None):
+        """set up figure for printing.  Using the standard wx Printer
+        Setup Dialog. """
+
+        if hasattr(self, 'printerData'):
+            data = wx.PageSetupDialogData()
+            data.SetPrintData(self.printerData)
+        else:
+            data = wx.PageSetupDialogData()
+        data.SetMarginTopLeft( (15, 15) )
+        data.SetMarginBottomRight( (15, 15) )
+
+        dlg = wx.PageSetupDialog(self, data)
+
+        if dlg.ShowModal() == wx.ID_OK:
+            data = dlg.GetPageSetupData()
+            tl = data.GetMarginTopLeft()
+            br = data.GetMarginBottomRight()
+        self.printerData = wx.PrintData(data.GetPrintData())
+        dlg.Destroy()
 
     def Printer_Preview(self, event=None):
         """ generate Print Preview with wx Print mechanism"""
