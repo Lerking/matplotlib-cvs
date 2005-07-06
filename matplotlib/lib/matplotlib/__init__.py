@@ -143,8 +143,8 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 __version__  = '0.83a'
-__revision__ = '$Revision: 1.67 $'
-__date__     = '$Date: 2005-07-06 14:37:36 $'
+__revision__ = '$Revision: 1.68 $'
+__date__     = '$Date: 2005-07-06 22:20:13 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -332,7 +332,7 @@ def _get_configdir():
         os.mkdir(p)
 
     return p
-get_configdir = verbose.wrap('$HOME=%s', _get_configdir, always=False)
+get_configdir = verbose.wrap('CONFIGDIR=%s', _get_configdir, always=False)
 
 
 def _get_data_path():
