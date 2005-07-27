@@ -31,11 +31,14 @@ s = sin(2*pi*t)
 
 ax.plot(t,s)
 
+
 canvas = FigureCanvas(fig)  # a gtk.DrawingArea
 vbox.pack_start(canvas)
 
+
 toolbar = NavigationToolbar(canvas, win)
 vbox.pack_start(toolbar, False, False)
+
 
 win.show_all()
 gtk.main()
