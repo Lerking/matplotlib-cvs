@@ -258,7 +258,7 @@ class XTick(Tick):
     def _get_tick1line(self, loc):
         'Get the default line2D instance'
         # x in data coords, y in axes coords
-        l = Line2D( xdata=(loc, loc), ydata=(0, 0),
+        l = Line2D( xdata=(loc,), ydata=(0,),
                     color='k',
                     linestyle = 'None',
                     antialiased=False,
@@ -274,7 +274,7 @@ class XTick(Tick):
     def _get_tick2line(self, loc):
         'Get the default line2D instance'
         # x in data coords, y in axes coords
-        l = Line2D( xdata=(loc, loc), ydata=(1,1),
+        l = Line2D( xdata=(loc,), ydata=(1,),
                        color='k',
                        linestyle = 'None',
                        antialiased=False,
@@ -308,9 +308,9 @@ class XTick(Tick):
         x = loc
 
 
-        self.tick1line.set_xdata((x, x))
-        self.tick2line.set_xdata((x, x))
-        self.gridline.set_xdata((x, x))
+        self.tick1line.set_xdata((x,))
+        self.tick2line.set_xdata((x,))
+        self.gridline.set_xdata((x, ))
         self.label1.set_x(x)
         self.label2.set_x(x)
         self._loc = loc
@@ -385,7 +385,7 @@ class YTick(Tick):
         'Get the default line2D instance'
         # x in axes coords, y in data coords
 
-        l = Line2D( (0, 0), (loc, loc), color='k',
+        l = Line2D( (0,), (loc,), color='k',
                     antialiased=False,
                     marker = TICKRIGHT,
                     linestyle = 'None',
@@ -399,7 +399,7 @@ class YTick(Tick):
     def _get_tick2line(self, loc):
         'Get the default line2D instance'
         # x in axes coords, y in data coords
-        l = Line2D( (1, 1), (0, 0), color='k',
+        l = Line2D( (1,), (0,), color='k',
                     antialiased=False,
                     marker = TICKLEFT,
                     linestyle = 'None',
@@ -432,9 +432,9 @@ class YTick(Tick):
     def update_position(self, loc):
         'Set the location of tick in data coords with scalar loc'
         y = loc
-        self.tick1line.set_ydata((y, y))
-        self.tick2line.set_ydata((y, y))
-        self.gridline.set_ydata((y, y))
+        self.tick1line.set_ydata((y,))
+        self.tick2line.set_ydata((y,))
+        self.gridline.set_ydata((y, ))
 
         self.label1.set_y( y )
         self.label2.set_y( y )
