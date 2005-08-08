@@ -1,6 +1,6 @@
 /*
  * The Python Imaging Library.
- * $Id: _tkagg.cpp,v 1.8 2005-08-08 16:11:07 cmoad Exp $ 
+ * $Id: _tkagg.cpp,v 1.9 2005-08-08 17:57:05 cmoad Exp $ 
  *
  */
 
@@ -108,6 +108,8 @@ PyAggImagePhoto(ClientData clientdata, Tcl_Interp* interp,
 		       -destx, -desty);
     } else {
       bbox = NULL;
+      destbuffer = NULL;
+      destx = desty = destwidth = destheight = deststride = 0;
     }
 
     /* setup tkblock */
