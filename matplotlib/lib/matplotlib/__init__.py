@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.84cvs'
-__revision__ = '$Revision: 1.74 $'
-__date__     = '$Date: 2005-08-03 15:25:21 $'
+__revision__ = '$Revision: 1.75 $'
+__date__     = '$Date: 2005-08-22 16:25:47 $'
 
 import sys, os, warnings
 import distutils.sysconfig
@@ -591,7 +591,6 @@ defaultParams = {
     'lines.solid_joinstyle' : ['miter', validate_joinstyle],    
     'lines.dash_capstyle' : ['butt', validate_capstyle],
     'lines.solid_capstyle' : ['projecting', validate_capstyle],       
-    'lines.data_clipping' : [False, validate_bool],  # clip data
 
     # patch props    
     'patch.linewidth'   : [0.5, validate_float], # line width in points
