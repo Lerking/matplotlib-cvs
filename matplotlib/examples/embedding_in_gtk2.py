@@ -4,18 +4,21 @@ show how to add a matplotlib FigureCanvasGTK or FigureCanvasGTKAgg widget and
 a toolbar to a gtk.Window
 """
 
+import gtk
+
 from matplotlib.axes import Subplot
 from matplotlib.figure import Figure
 from matplotlib.numerix import arange, sin, pi
-from matplotlib.widgets import HorizontalSpanSelector
 
-# switch comments for gtk over gtkagg
+# uncomment to select /GTK/GTKAgg/GTKCairo
 #from matplotlib.backends.backend_gtk import FigureCanvasGTK as FigureCanvas
 from matplotlib.backends.backend_gtkagg import FigureCanvasGTKAgg as FigureCanvas
+#from matplotlib.backends.backend_gtkcairo import FigureCanvasGTKCairo as FigureCanvas
+
 # or NavigationToolbar for classic
+#from matplotlib.backends.backend_gtk import NavigationToolbar2GTK as NavigationToolbar
 from matplotlib.backends.backend_gtkagg import NavigationToolbar2GTKAgg as NavigationToolbar
 
-import gtk
 
 win = gtk.Window()
 win.connect("destroy", lambda x: gtk.main_quit())
@@ -40,9 +43,6 @@ vbox.pack_start(canvas)
 toolbar = NavigationToolbar(canvas, win)
 vbox.pack_start(toolbar, False, False)
 
-def onselect(*args): pass
-span = HorizontalSpanSelector(ax, onselect, useblit=False,
-                              rectprops=dict(alpha=0.5, facecolor='red') )
 
 win.show_all()
 gtk.main()
