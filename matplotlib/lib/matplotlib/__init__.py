@@ -143,11 +143,11 @@ the exception of those in mlab.py provided by matplotlib.
 from __future__ import generators
 
 
-__version__  = '0.84'
-__revision__ = '$Revision: 1.81 $'
-__date__     = '$Date: 2005-09-19 13:58:03 $'
+__version__  = '0.85.cvs'
+__revision__ = '$Revision: 1.82 $'
+__date__     = '$Date: 2005-10-10 21:08:20 $'
 
-import sys, os, warnings
+import sys, os, warnings, shutil
 import distutils.sysconfig
 
 if not hasattr(sys, 'argv'):  # for modpython
@@ -758,7 +758,7 @@ def matplotlib_fname():
 WARNING: Old rc filename ".matplotlibrc" found in working dir
   and and renamed to new default rc file name "matplotlibrc"
   (no leading"dot"). """
-        os.rename('.matplotlibrc', 'matplotlibrc')
+        shutil.move('.matplotlibrc', 'matplotlibrc')
 
     home = get_home()
     oldname = os.path.join( home, '.matplotlibrc')
@@ -769,7 +769,7 @@ WARNING: Old rc filename ".matplotlibrc" found in working dir
 WARNING: Old rc filename "%s" found and renamed to
   new default rc file name "%s"."""%(oldname, newname)
 
-        os.rename(oldname, newname)
+        shutil.move(oldname, newname)
 
 
     fname = os.path.join( os.getcwd(), 'matplotlibrc')
