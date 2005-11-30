@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.85.1.cvs'
-__revision__ = '$Revision: 1.86 $'
-__date__     = '$Date: 2005-11-30 22:09:45 $'
+__revision__ = '$Revision: 1.87 $'
+__date__     = '$Date: 2005-11-30 22:37:07 $'
 
 import sys, os, warnings, shutil
 import distutils.sysconfig
@@ -962,7 +962,7 @@ def rcdefaults():
 _knownBackends = {
     'Agg2':1, 'Agg':1, 'Cairo':1, 'CocoaAgg':1, 'FltkAgg':1, 'GD':1, 'GDK':1,
     'GTK':1, 'GTKAgg':1, 'GTKCairo':1, 'Paint':1, 'PS':1, 'LaTeX':1, 'QtAgg':1,
-    'SVG':1, 'Template':1, 'TkAgg':1, 'WX':1, 'WXAgg':1, 'WXGLAgg':1,}
+    'SVG':1, 'EMF':1, 'Template':1, 'TkAgg':1, 'WX':1, 'WXAgg':1, 'WXGLAgg':1,}
 
 
 known = _knownBackends.keys()
