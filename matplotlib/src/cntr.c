@@ -11,7 +11,7 @@
     was written by following the Python "Extending and Embedding"
     tutorial.
 
-  $Id: cntr.c,v 1.5 2005-11-30 22:09:45 jdh2358 Exp $
+  $Id: cntr.c,v 1.6 2005-12-05 17:55:38 efiring Exp $
  */
 
 #include <Python.h>
@@ -1719,8 +1719,8 @@ init_na_cntr(void)
     Py_INCREF(&CntrType);
     PyModule_AddObject(m, "Cntr", (PyObject *)&CntrType);
 }
-
-#else
+#endif
+#ifdef NUMERIC
 PyMODINIT_FUNC
 init_nc_cntr(void)
 {
@@ -1739,7 +1739,27 @@ init_nc_cntr(void)
     Py_INCREF(&CntrType);
     PyModule_AddObject(m, "Cntr", (PyObject *)&CntrType);
 }
+#endif
 
+#ifdef SCIPY
+PyMODINIT_FUNC
+init_ns_cntr(void)
+{
+    PyObject* m;
+
+    if (PyType_Ready(&CntrType) < 0)
+        return;
+
+    m = Py_InitModule3("_ns_cntr", module_methods,
+                       "Contouring engine as an extension type (Scipy).");
+
+    if (m == NULL)
+      return;
+
+    import_array();
+    Py_INCREF(&CntrType);
+    PyModule_AddObject(m, "Cntr", (PyObject *)&CntrType);
+}
 #endif
 
 
