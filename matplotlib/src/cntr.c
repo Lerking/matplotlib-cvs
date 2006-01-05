@@ -11,7 +11,7 @@
     was written by following the Python "Extending and Embedding"
     tutorial.
 
-  $Id: cntr.c,v 1.6 2005-12-05 17:55:38 efiring Exp $
+  $Id: cntr.c,v 1.7 2006-01-05 00:33:59 teoliphant Exp $
  */
 
 #include <Python.h>
@@ -25,7 +25,7 @@
 #ifdef NUMERIC
 #include "Numeric/arrayobject.h"
 #else
-#include "scipy/arrayobject.h"
+#include "numpy/arrayobject.h"
 #endif
 #endif
 

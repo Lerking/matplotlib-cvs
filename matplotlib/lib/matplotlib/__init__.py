@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.85.1.cvs'
-__revision__ = '$Revision: 1.90 $'
-__date__     = '$Date: 2005-12-21 01:30:25 $'
+__revision__ = '$Revision: 1.91 $'
+__date__     = '$Date: 2006-01-05 00:33:54 $'
 
 import sys, os, warnings, shutil
 import distutils.sysconfig
@@ -461,9 +461,9 @@ def validate_numerix(s):
     sl = s.lower()
     if sl=='numeric': return 'Numeric'
     elif sl=='numarray': return 'numarray'
-    elif sl=='scipy': return 'scipy'
+    elif sl=='numpy': return 'numpy'
     else:
-        raise ValueError('Numerix must be Numeric, numarray, or scipy')
+        raise ValueError('Numerix must be Numeric, numarray, or numpy')
 
 def validate_toolbar(s):
     """
