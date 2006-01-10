@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86'
-__revision__ = '$Revision: 1.93 $'
-__date__     = '$Date: 2006-01-10 16:27:43 $'
+__revision__ = '$Revision: 1.94 $'
+__date__     = '$Date: 2006-01-10 16:57:03 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -431,7 +431,7 @@ get_data_path = verbose.wrap('matplotlib data path %s', _get_data_path, always=F
 
 def checkdep_dvipng():
     stdin, stdout = os.popen4('dvipng -v')
-    if 'dvipng' in stdout.read(): return True
+    if 'This is dvipng' in stdout.read(): return True
     else:
         verbose.report('dvipng not found!', 'helpful')
         return False
@@ -453,7 +453,7 @@ Please install a recent version of ghostscript \n\
 
 def checkdep_ps2eps():
     stdin, stdout = os.popen4('ps2eps -v')
-    if 'ps2eps' in stdout.read(): return True
+    if 'ps2eps - convert PostScript to EPS' in stdout.read(): return True
     else:
         verbose.report('ps2eps not found!', 'helpful')
         return False
@@ -468,7 +468,7 @@ Please install the appropriate package for your platform.\n', 'helpful')
 
 def checkdep_xpdf():
     stdin, stdout = os.popen4('xpdf -v')
-    if 'xpdf' in stdout.read(): return True
+    if 'xpdf version' in stdout.read(): return True
     else:
         verbose.report('xpdf not found!', 'helpful')
         return False
