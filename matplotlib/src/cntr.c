@@ -11,7 +11,7 @@
     was written by following the Python "Extending and Embedding"
     tutorial.
 
-  $Id: cntr.c,v 1.7 2006-01-05 00:33:59 teoliphant Exp $
+  $Id: cntr.c,v 1.8 2006-01-20 18:36:58 cmoad Exp $
  */
 
 #include <Python.h>
@@ -1701,7 +1701,11 @@ static PyMethodDef module_methods[] = {
 
 
 #ifdef NUMARRAY
+#if PY_MINOR_VERSION > 2
 PyMODINIT_FUNC
+#else
+DL_EXPORT(void)
+#endif
 init_na_cntr(void)
 {
     PyObject* m;
@@ -1721,7 +1725,11 @@ init_na_cntr(void)
 }
 #endif
 #ifdef NUMERIC
+#if PY_MINOR_VERSION > 2
 PyMODINIT_FUNC
+#else
+DL_EXPORT(void)
+#endif
 init_nc_cntr(void)
 {
     PyObject* m;
@@ -1742,7 +1750,11 @@ init_nc_cntr(void)
 #endif
 
 #ifdef SCIPY
+#if PY_MINOR_VERSION > 2
 PyMODINIT_FUNC
+#else
+DL_EXPORT(void)
+#endif
 init_ns_cntr(void)
 {
     PyObject* m;
