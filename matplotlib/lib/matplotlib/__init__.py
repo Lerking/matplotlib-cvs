@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2cvs'
-__revision__ = '$Revision: 1.101 $'
-__date__     = '$Date: 2006-01-20 18:43:46 $'
+__revision__ = '$Revision: 1.102 $'
+__date__     = '$Date: 2006-01-20 18:50:12 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -192,12 +192,6 @@ else: _havedate = True
 #    import pkg_resources # pkg_resources is part of setuptools
 #except ImportError: _have_pkg_resources = False
 #else: _have_pkg_resources = True
-
-try:
-    __import__('pkg_resources').declare_namespace(__name__)
-    print __name__, __file__
-except ImportError:
-    pass # must not have setuptools
 
 if not _python23:
     def enumerate(seq):
