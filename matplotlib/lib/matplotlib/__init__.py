@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2cvs'
-__revision__ = '$Revision: 1.100 $'
-__date__     = '$Date: 2006-01-20 18:36:58 $'
+__revision__ = '$Revision: 1.101 $'
+__date__     = '$Date: 2006-01-20 18:43:46 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -153,7 +153,6 @@ import distutils.sysconfig
 # Needed for toolkit setuptools support
 try:
     __import__('pkg_resources').declare_namespace(__name__)
-    print __name__, __file__
 except ImportError:
     pass # must not have setuptools
 
