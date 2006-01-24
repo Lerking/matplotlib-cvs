@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.105 $'
-__date__     = '$Date: 2006-01-24 15:30:43 $'
+__revision__ = '$Revision: 1.106 $'
+__date__     = '$Date: 2006-01-24 15:42:47 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -674,6 +674,7 @@ is recommended to use the ps.usedistiller option.' % (gs_v, gs_sugg))
             flag = False
             warnings.warn('matplotlibrc ps.usedistiller option can not be used \
 unless ghostscript-%s or later is installed on your system'% gs_req)
+        
         if s == 'xpdf':
             xpdf_req = '3.0'
             ps2eps_req = '1.58'
@@ -683,12 +684,14 @@ unless ghostscript-%s or later is installed on your system'% gs_req)
                 flag = False
                 warnings.warn('matplotlibrc ps.usedistiller can not be set to \
 xpdf unless xpdf-%s or later is installed on your system' % xpdf_req)
-        ps2eps_v = checkdep_ps2eps()
-        if compare_versions(ps2eps_v, ps2eps_req): pass
-        else:
-            flag = False
-            warnings.warn('matplotlibrc ps.usedistiller can not be set to xpdf \
+            
+            ps2eps_v = checkdep_ps2eps()
+            if compare_versions(ps2eps_v, ps2eps_req): pass
+            else:
+                flag = False
+                warnings.warn('matplotlibrc ps.usedistiller can not be set to xpdf \
 unless ps2eps-%s or later is installed on your system' % ps2eps_req)
+        
         if flag: return s
         else: return None
     else: 
