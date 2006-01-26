@@ -93,11 +93,10 @@ data.extend(glob.glob('images/*.xpm'))
 data.extend(glob.glob('images/*.svg'))
 data.extend(glob.glob('images/*.png'))
 data.extend(glob.glob('images/*.ppm'))
+data.extend(glob.glob('lib/matplotlib/backends/*.nib/*.nib'))
 data.append('matplotlibrc')
 
-data_files=[('matplotlib/mpl-data', data),
-            ('matplotlib/mpl-data/Matplotlib.nib',
-             glob.glob('lib/matplotlib/backends/Matplotlib.nib/*.nib'))]
+data_files=[('matplotlib/mpl-data', data),]
 
 # data_files fix from http://wiki.python.org/moin/DistutilsInstallDataScattered
 from distutils.command.install_data import install_data
