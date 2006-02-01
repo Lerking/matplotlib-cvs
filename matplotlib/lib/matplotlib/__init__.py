@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.112 $'
-__date__     = '$Date: 2006-01-30 04:20:42 $'
+__revision__ = '$Revision: 1.113 $'
+__date__     = '$Date: 2006-02-01 21:50:36 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -614,8 +614,6 @@ unless ps2eps-%s or later is installed on your system' % ps2eps_req)
         raise ValueError('matplotlibrc ps.usedistiller must either be none, \
 ghostscript or xpdf')
 
-validate_tex_engine = ValidateInStrings(['tex', 'latex'], ignorecase=True)
-
 def validate_usetex(s):
     bl = validate_bool(s)
     if bl:
@@ -737,7 +735,6 @@ defaultParams = {
     # text props
     'text.color'        : ['k', validate_color],     # black
     'text.usetex'       : [False, validate_usetex],
-    'text.tex.engine'   : ['tex', validate_tex_engine], # TeX or LaTeX
     'text.fontstyle'    : ['normal', str],
     'text.fontangle'    : ['normal', str],
     'text.fontvariant'  : ['normal', str],
