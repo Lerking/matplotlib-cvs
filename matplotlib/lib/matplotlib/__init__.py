@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.116 $'
-__date__     = '$Date: 2006-02-08 13:00:46 $'
+__revision__ = '$Revision: 1.117 $'
+__date__     = '$Date: 2006-02-09 13:30:29 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -338,13 +338,14 @@ def _get_data_path():
     if os.environ.has_key('MATPLOTLIBDATA'):
         path = os.environ['MATPLOTLIBDATA']
         if os.path.isdir(path): return path
+    
     path = os.sep.join([os.path.dirname(__file__), 'mpl-data'])
     if os.path.isdir(path): return path
 
     # setuptools' namespace_packages may highjack this init file
     # so need to try something known to be in matplotlib, not basemap
-    import matplotlib.artist
-    path = os.sep.join([os.path.dirname(matplotlib.artist.__file__), 'mpl-data'])
+    import matplotlib.afm
+    path = os.sep.join([os.path.dirname(matplotlib.afm.__file__), 'mpl-data'])
     if os.path.isdir(path): return path
     
     # py2exe zips pure python, so still need special check
