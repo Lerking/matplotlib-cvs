@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.118 $'
-__date__     = '$Date: 2006-02-09 23:42:12 $'
+__revision__ = '$Revision: 1.119 $'
+__date__     = '$Date: 2006-02-09 23:49:42 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -743,7 +743,7 @@ defaultParams = {
     'font.variant'      : ['normal', str],           #
     'font.stretch'      : ['normal', str],           #
     'font.weight'       : ['normal', str],           #
-    'font.size'         : ['medium', validate_float], #
+    'font.size'         : [12.0, validate_float], #
     'font.serif'        : ['serif', validate_comma_sep_str],
     'font.sans-serif'   : ['sans-serif', validate_comma_sep_str],
     'font.cursive'      : ['cursive', validate_comma_sep_str],
