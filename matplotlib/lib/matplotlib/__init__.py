@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.119 $'
-__date__     = '$Date: 2006-02-09 23:49:42 $'
+__revision__ = '$Revision: 1.120 $'
+__date__     = '$Date: 2006-02-10 00:33:50 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -753,6 +753,7 @@ defaultParams = {
     # text props
     'text.color'        : ['k', validate_color],     # black
     'text.usetex'       : [False, validate_usetex],
+    'text.dvipnghack'    : [False, validate_bool],
     'text.fontstyle'    : ['normal', str],
     'text.fontangle'    : ['normal', str],
     'text.fontvariant'  : ['normal', str],
