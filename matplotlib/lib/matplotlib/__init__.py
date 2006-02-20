@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.86.2'
-__revision__ = '$Revision: 1.120 $'
-__date__     = '$Date: 2006-02-10 00:33:50 $'
+__revision__ = '$Revision: 1.121 $'
+__date__     = '$Date: 2006-02-20 00:39:47 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -349,7 +349,7 @@ def _get_data_path():
     if os.path.isdir(path): return path
     
     # py2exe zips pure python, so still need special check
-    if sys.platform=='win32' and sys.frozen:
+    if (sys.platform=='win32' or sys.platform=='darwin') and sys.frozen:
         path = os.path.join(os.path.split(sys.path[0])[0], 'matplotlibdata')
         if os.path.isdir(path):  return path
         else:
