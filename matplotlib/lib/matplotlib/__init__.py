@@ -144,8 +144,8 @@ from __future__ import generators
 
 
 __version__  = '0.87.1cvs'
-__revision__ = '$Revision: 1.123 $'
-__date__     = '$Date: 2006-02-24 00:27:12 $'
+__revision__ = '$Revision: 1.124 $'
+__date__     = '$Date: 2006-02-27 15:01:33 $'
 
 import sys, os, warnings, shutil, md5
 import distutils.sysconfig
@@ -908,7 +908,12 @@ def validate_key(key, val, line, cnt, fname, fail_on_error):
         key = alt
 
     if not defaultParams.has_key(key):
-        warnings.warn('Bad key "%s" on line %d in %s' % (key, cnt, fname))
+        print >> sys.stderr, """\
+Bad key "%s" on line %d in
+%s.
+You probably need to get an updated matplotlibrc file from
+http://matplotlib.sf.net/matplotlibrc or from the matplotlib src
+distribution""" % (key, cnt, fname)
         return None
 
     default, converter =  defaultParams[key]
